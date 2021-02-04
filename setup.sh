@@ -23,6 +23,10 @@ ln -sf /usr/lib/python3/dist-packages/_cffi_backend.cpython-35m-x86_64-linux-gnu
 ln -sf /usr/lib/python3/dist-packages/_dbus_bindings.cpython-35m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/_dbus_bindings.so
 ln -sf /usr/lib/python3/dist-packages/_dbus_glib_bindings.cpython-35m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/_dbus_glib_bindings.so
 
+# symlink python3.7 and libs
+ln -sf /usr/bin/python3.7 /usr/bin/python3
+ln -sf /usr/bin/python3.7 /usr/bin/python
+
 curl -sL https://bootstrap.pypa.io/get-pip.py -o /usr/bin/get-pip
 chmod a+x /usr/bin/get-pip
 rm -rf /root/.cache/pip
@@ -35,7 +39,7 @@ EOF
 hash pip3
 
 pip3 install setuptools==53.0.0 cryptography==3.3.1 wheel==0.29.0 cachetools==3.1.1
-pip3 install jmespath netaddr botocore bot boto3 google-auth pyVim pyVmomi PyYAML==5.4.1 requests
+pip3 install jmespath netaddr botocore boto boto3 google-auth pyVim pyVmomi PyYAML==5.4.1 requests
 pip3 install ansible-base==2.10.3 ansible==2.10.3
 
 # remove and clean up apt
